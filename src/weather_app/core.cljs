@@ -45,6 +45,8 @@
   []
   [:table {:class "table"}
    [:tr (for [d days] [:th d])]
+   ;[:tr (for [f (seven-day-forecast)] [:th ()])]
+   ;[:tr (for [])]
    ])
 
 (defn weather-component
