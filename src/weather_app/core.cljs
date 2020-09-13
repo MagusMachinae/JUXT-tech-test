@@ -30,10 +30,10 @@
     [:i {:class "wi wi-day-sunny" } " 27"[:i {:class "wi wi-celsius"}]]
     [:div]]
    [:span {:class "col-md-4"}
-    [:div ()]
+    [:div {:class "wi wi-rain"}  " %"]
     [:div ]
     [:div
-     [:i {:class "wi wi-humidity"} "32%"]]]]
+     [:i {:class "wi wi-humidity"} " 32%"]]]]
   )
 
 (defn epoch->day
