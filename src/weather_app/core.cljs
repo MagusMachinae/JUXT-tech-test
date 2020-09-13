@@ -1,5 +1,7 @@
 (ns ^:figwheel-hooks weather-app.core
-  (:require [reagent.dom :as rd]))
+  (:require [reagent.dom :as rd]
+            [ajax.core :refer [GET]
+            [tick.core :as tick]]))
 
 (enable-console-print!)
 
