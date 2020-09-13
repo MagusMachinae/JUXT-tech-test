@@ -24,7 +24,7 @@
   []
   [:div
    [:span {:class "col-md-8"}
-    [:i {:class "wi wi-day-sunny" } " 27"]
+    [:i {:class "wi wi-day-sunny" } " 27"[:i {:class "wi wi-celsius"}]]
     [:div]]
    [:span {:class "col-md-4"}
     [:div ()]
@@ -58,10 +58,12 @@
    [:tr (for [d days] [:th d])]
    [:tr (for [t seven-day-forecast-stub] [:td
                                           [:i {:class "wi wi-thermometer"}]
-                                          t])]
+                                          t
+                                          [:i {:class "wi wi-celsius"}]])]
    [:tr (for [t seven-day-forecast-stub] [:td
                                            [:i {:class "wi wi-thermometer-exterior"}]
-                                          t])]
+                                          t
+                                          [:i {:class "wi wi-celsius"}]])]
    ])
 
 (defn weather-component
