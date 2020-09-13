@@ -9,6 +9,9 @@
   ["Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun"])
 
 (def seven-day-forecast-stub
+  ["Clear" "Clear" "Clouds" "Rain" "Thunderstorm" "Drizzle" "Snow"])
+
+(def seven-day-forecast-temps-stub
   ["30" "32" "28" "27" "25" "20" "18"])
 
 (defn get-forecasts
@@ -56,14 +59,15 @@
   []
   [:table {:class "table"}
    [:tr (for [d days] [:th d])]
-   [:tr (for [t seven-day-forecast-stub] [:td
-                                          [:i {:class "wi wi-thermometer"}]
-                                          t
-                                          [:i {:class "wi wi-celsius"}]])]
-   [:tr (for [t seven-day-forecast-stub] [:td
-                                           [:i {:class "wi wi-thermometer-exterior"}]
-                                          t
-                                          [:i {:class "wi wi-celsius"}]])]
+   [:tr (for [f seven-day-forecast-stub] [:td [:i {:class }]])]
+   [:tr (for [t seven-day-forecast-temps-stub] [:td
+                                                [:i {:class "wi wi-thermometer"}]
+                                                t
+                                                [:i {:class "wi wi-celsius"}]])]
+   [:tr (for [t seven-day-forecast-temps-stub] [:td
+                                                [:i {:class "wi wi-thermometer-exterior"}]
+                                                t
+                                                [:i {:class "wi wi-celsius"}]])]
    ])
 
 (defn weather-component
