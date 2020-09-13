@@ -8,6 +8,9 @@
 (def days
   ["Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun"])
 
+(def seven-day-forecast-stub
+  ["30" "32" "28" "27" "25" "20" "18"])
+
 (defn get-forecasts
   "Calls weather api and returns response from API using current time and provided co-ords."
   [lat long]
@@ -20,7 +23,15 @@
 (defn daily-forecast-component
   []
   [:div
-   [:i {:class "wi wi-day-sunny"}]])
+   [:span {:class "col-md-8"}
+    [:i {:class "wi wi-day-sunny" } " 27"]
+    [:div]]
+   [:span {:class "col-md-4"}
+    [:div ()]
+    [:div ]
+    [:div
+     [:i {:class "wi wi-humidity"} ]]]]
+  )
 
 (defn epoch->day
   "converts a UNIX epoch to human readable time, returns the value of the day"
@@ -45,17 +56,23 @@
   []
   [:table {:class "table"}
    [:tr (for [d days] [:th d])]
-   ;[:tr (for [f (seven-day-forecast)] [:th ()])]
-   ;[:tr (for [])]
+   [:tr (for [t seven-day-forecast-stub] [:td
+                                          [:i {:class "wi wi-thermometer"}]
+                                          t])]
+   [:tr (for [t seven-day-forecast-stub] [:td
+                                           [:i {:class "wi wi-thermometer-exterior"}]
+                                          t])]
    ])
 
 (defn weather-component
   []
-  [:div {:class "well"}
-   [:h "Today's Weather" ]
-   [:div (daily-forecast-component)]
-   [:div (weekly-forecast-component)]
-   ])
+  (let [forecasts (get-forecasts 55.86 -4.25)]
+    [:div {:class "well"}
+     [:h "Today's Weather" (refresh-button)]
+     [:div (daily-forecast-component)]
+     [:div (weekly-forecast-component)]
+
+     ]))
 
 (defn ^:after-load ^:export init
   []
