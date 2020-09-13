@@ -33,7 +33,7 @@
     [:div ()]
     [:div ]
     [:div
-     [:i {:class "wi wi-humidity"} ]]]]
+     [:i {:class "wi wi-humidity"} "32%"]]]]
   )
 
 (defn epoch->day
