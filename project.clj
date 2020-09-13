@@ -9,7 +9,8 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.773"]
                  [cljs-ajax "0.8.0"]
-                 [reagent "1.0.0-alpha2"]]
+                 [reagent "1.0.0-alpha2"]
+                 [tick "0.4.26-alpha"]]
 
   :source-paths ["src"]
   :aliases {"fig" ["trampoline" "run" "-m" "figwheel.main" "-b" "dev"]
