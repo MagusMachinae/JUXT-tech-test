@@ -27,8 +27,12 @@
   []
   [:div
    [:span {:class "col-md-8"}
-    [:i {:class "wi wi-day-sunny" } " 27"[:i {:class "wi wi-celsius"}]]
-    [:div]]
+    [:div [:i {:class "wi wi-day-sunny" } " 27"[:i {:class "wi wi-celsius"}]]]
+    [:div
+     [:span {:class "col-md-2"}
+     [:i {:class "wi wi-thermometer"}]]
+    [:span {:class "col-md-2"}
+     [:i {:class "wi wi-thermometer-exterior"}]]]]
    [:span {:class "col-md-4"}
     [:div {:class "wi wi-rain"}  " %"]
     [:div ]
