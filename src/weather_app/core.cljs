@@ -22,6 +22,25 @@
   [:div
    [:i {:class "wi wi-day-sunny"}]])
 
+(defn epoch->day
+  "converts a UNIX epoch to human readable time, returns the value of the day"
+  [epoch]
+  (tick/day-of-week (tick/date epoch)))
+
+(defmulti forecast->glyph
+  "Takes a map containing a weather or wind direction forecast, matches it to the correct glyph"
+  [forecast]
+  )
+
+(defn seven-day-forecast
+  [forecasts]
+  "Extracts ")
+
+(defn refresh-button
+  "Reloads the component by calling init"
+  []
+  )
+
 (defn weekly-forecast-component
   []
   [:table {:class "table"}
