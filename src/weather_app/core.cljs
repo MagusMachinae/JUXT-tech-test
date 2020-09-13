@@ -3,9 +3,27 @@
 
 (enable-console-print!)
 
+(def days
+  ["Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun"])
+
+(defn daily-forecast-component
+  []
+  [:div
+   [:i {:class "wi wi-day-sunny"}]])
+
+(defn weekly-forecast-component
+  []
+  [:table {:class "table"}
+   [:tr (for [d days] [:th d])]
+   ])
+
 (defn weather-component
   []
-  [:div "Hello Juxt"])
+  [:div {:class "well"}
+   [:h "Today's Weather" ]
+   [:div (daily-forecast-component)]
+   [:div (weekly-forecast-component)]
+   ])
 
 (defn ^:after-load ^:export init
   []
