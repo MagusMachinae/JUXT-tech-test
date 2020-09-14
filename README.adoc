@@ -4,7 +4,7 @@ This repository contains my submission for the JUXT technical test.
 
 === Screenshot of Weather Component
 
-image::http
+image::https://i.imgur.com/hgp4uQX.png[]
 
 == Discussion
 
