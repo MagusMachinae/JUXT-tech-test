@@ -2,11 +2,11 @@
 
 This repository contains my submission for the JUXT technical test.
 
-===Screenshot of Weather Component
+=== Screenshot of Weather Component
 
 image::http
 
-==Discussion
+== Discussion
 
 Initially I had planned to write this in a literate style, so that generating this brief, and additional documentation could be done
 using lein-marginalia. In the interest of not having this be repo mostly comments, I decided to put that by the wayside and attempt to communicate intent through
