@@ -30,12 +30,12 @@
     [:div [:i {:class "wi wi-day-sunny" } " 27"[:i {:class "wi wi-celsius"}]]]
     [:div
      [:span {:class "col-md-2"}
-     [:i {:class "wi wi-thermometer"}]]
+     [:i {:class "wi wi-thermometer"} " 20"] [:i {:class "wi wi-celsius"}]]
     [:span {:class "col-md-2"}
-     [:i {:class "wi wi-thermometer-exterior"}]]]]
+     [:i {:class "wi wi-thermometer-exterior"} " 20" [:i {:class "wi wi-celsius"}]]]]]
    [:span {:class "col-md-4"}
     [:div {:class "wi wi-rain"}  " %"]
-    [:div ]
+    [:div "kph"]
     [:div
      [:i {:class "wi wi-humidity"} " 32%"]]]]
   )
