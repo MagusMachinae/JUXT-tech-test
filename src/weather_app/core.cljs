@@ -46,16 +46,20 @@
   (tick/day-of-week (tick/date epoch)))
 
 (defmulti forecast->glyph
-  "Takes a map containing a weather or wind direction forecast, matches it to the correct glyph"
-  [forecast]
+  "Takes a map containing a weather or wind direction forecast, matches it to the correct glyph. Despatches on string value of the map's key"
+  ()
   )
+
+;(defmethod forecast->glyph [forecast]
+;  "Rain")
 
 (defn seven-day-forecast
   [forecasts]
-  "Extracts ")
+  "")
 
 (defn refresh-button
   "Reloads the component by calling init"
+  ;probably not the best way of implementing a reload, especially when the dropdown comes into play
   []
   )
 
