@@ -63,7 +63,7 @@
   []
   [:table {:class "table"}
    [:tr (for [d days] [:th d])]
-   [:tr (for [f seven-day-forecast-stub] [:td [:i {:class }]])]
+   ;[:tr (for [f seven-day-forecast-stub] [:td [:i {:class }]])]
    [:tr (for [t seven-day-forecast-temps-stub] [:td
                                                 [:i {:class "wi wi-thermometer"}]
                                                 t
