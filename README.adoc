@@ -15,3 +15,18 @@ docstrings and commit logs.
 Trying to conceptualise what parts of state and data need to be passed around between sub-components and reacting to user input stood out to me as the exact use case for re-frame,
 especially in the case of the drop-down menu/typeahead and refresh button. I had planned on doing that from the start, but felt that trying to make sure I was
 using it correctly for the last part of the task would be counter-productive. Given more time, I would use re-frame to help with completing the third part of the task in a manner more representative of production-ready Clojure.
+
+The scaling of elements is a glaring issue, but I felt myself wasting time trying to pass a font size through hiccup to no avail, so fell back upon the old schoolyard advice of
+doing what part of the test you can as you can do it. I'm not particularly proud of having to write different parts of the codebase concurrently, and can see how it can be wildly counter-productive and mal-adaptive, but when I am pressed for time
+I feel the need to just get some of my ideas down into the AST so some more branches and leaves have the chance to sprout out from them. This was part of my logic for going straight to Part 2, and then building the hiccup back around the logic required to
+populate the fields with the correct data. It seemed to be a way to let the data drive the design.
+
+Having all the CSS files in resources feels a bit excessive, and it doesn't seem to be the most elegant or pleasing solution. All that purple in the github language bar isn't very nice to look at.
+I put them in resources because that seemed the fastest way to reference them, but calling them through via an external CDN would be one of the first changes made.
+
+With regard to parsing from strings to repsective icons; a multi-method seemed the most obvious first port of call, but I wasn't entirely sure how to set up the main method on account of the nested structure of the data it needs to despatch on.
+I had used a multimethod for similar parsing work before, and thought it a better solution than one large function with a lot of branches to determine between wind direction data and conditional data and then get the correct type for each. In retrospect, that might have been faster, but I felt at the time that a defmulti was more efficient from a programmer and computational perspective.
+With more time, it would be relatively simple to implement a despatch based on the key of the data given, and then match the given value with either a degree glyph, or substitute a description for the icon representing the state of the weather.
+
+For the test-suite, I find it quite difficult to tell when working in a Cljs frontend exactly what to test. In this specific case, the multimethod for matching icons is a good candidate, setting up an assert to make sure the method returns the correct string to be passed to the css class.
+Likewise the function for converting from a UNIX timestamp to a day of the week, but I am reasonably confident that that function works as intended. If I was writing Clojure specs for the weather API response, which seems like a reasonable inclusion in a project of which this component would be part of, I could use that to generate a battery of test data to verify my functions against.
