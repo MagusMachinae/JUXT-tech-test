@@ -27,13 +27,16 @@
   []
   [:div
    [:span {:class "col-md-8"}
-    [:div [:i {:class "wi wi-day-sunny" } " 27"[:i {:class "wi wi-celsius"}]]]
-    [:div
-     [:span {:class "col-md-2"}
+    [:div {:style {:font-size "60px"}}
+     [:i {:class "wi wi-day-sunny" } " 27"
+      [:i {:class "wi wi-celsius"}]]]
+    [:div {:style {:font-size "30px"}}
+     [:span {:class "col-md-3"}
      [:i {:class "wi wi-thermometer"} " 20"] [:i {:class "wi wi-celsius"}]]
-    [:span {:class "col-md-2"}
+    [:span {:class "col-md-3"}
      [:i {:class "wi wi-thermometer-exterior"} " 20" [:i {:class "wi wi-celsius"}]]]]]
-   [:span {:class "col-md-4"}
+   [:span {:class "col-md-4"
+           :style {:font-size "30px"}}
     [:div {:class "wi wi-rain"}  " %"]
     [:div "kph"]
     [:div
@@ -65,7 +68,8 @@
 
 (defn weekly-forecast-component
   []
-  [:table {:class "table"}
+  [:table {:class "table"
+           :style {:font-size "20px"}}
    [:tr (for [d days] [:th d])]
    ;[:tr (for [f seven-day-forecast-stub] [:td [:i {:class }]])]
    [:tr (for [t seven-day-forecast-temps-stub] [:td
@@ -81,8 +85,8 @@
 (defn weather-component
   []
   (let [forecasts (get-forecasts 55.86 -4.25)]
-    [:div {:class "well"}
-     [:h "Today's Weather" (refresh-button)]
+    [:div  {:class "well"}
+     [:h {:style {:font-size "30px"}} "Today's Weather" (refresh-button)]
      [:div (daily-forecast-component)]
      [:div (weekly-forecast-component)]
 
